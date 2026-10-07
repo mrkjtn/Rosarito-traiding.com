@@ -109,35 +109,219 @@ tbody tr:hover{background:var(--hover)}
  th,td{padding:11px 12px}
 }
 @media (prefers-reduced-motion:no-preference){tbody tr{transition:background-color .12s}}
+
+/* Section navbar (added) */
+.topnav{position:sticky;top:0;z-index:7;background:var(--surface);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.topnav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px}
+.topnav .links{display:flex;align-items:center;gap:6px}
+.topnav a{padding:8px 14px;border-radius:999px;color:var(--ink);font-size:14px;font-weight:600;text-decoration:none}
+.topnav a:hover{background:var(--hover);color:var(--link)}
+.topnav a.active{background:var(--brand);color:var(--surface)}
+.topnav a:focus-visible,.navbtn:focus-visible{outline:3px solid #3b82f6;outline-offset:2px}
+.navtitle{display:none;font-weight:600;color:var(--brand)}
+.navbtn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:var(--field);color:var(--ink);cursor:pointer}
+.navbtn svg{width:22px;height:22px}
+.bar{top:calc(env(safe-area-inset-top,0px) + 53px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 150px)}
+@media (max-width:1100px){
+ .navtitle{display:block}
+ .navbtn{display:inline-flex}
+ .topnav .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 20px 12px;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 10px 20px rgba(0,0,0,.12)}
+ .topnav.open .links{display:flex}
+ .topnav .links a{padding:12px 14px;border-radius:8px}
+}
+/* Phone layout (added): each table row becomes a stacked card that fits the screen */
+@media (max-width:820px){
+ .wrap{padding:0 14px}
+ .hero h1{max-width:none}
+ .card{background:transparent;border:0;overflow:visible}
+ table{min-width:0;display:block;width:100%}
+ thead{display:none}
+ tbody{display:block}
+ tbody tr{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:12px}
+ tbody tr:last-child td{border-bottom:0}
+ td{display:block;padding:6px 0;border-bottom:0;min-width:0}
+ td::before{content:attr(data-label);display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted)}
+ td:empty{display:none}
+ .num{width:auto}
+ .name{min-width:0;font-size:17px}
+ .field-offices{min-width:0;width:100%}
+ .field-office-list{max-height:none}
+}
 </style>
 </head>
 <body>
+<nav class="topnav" id="topnav" aria-label="Sections"><div class="wrap"><span class="navtitle">Sections</span><button class="navbtn" id="navbtn" type="button" aria-label="Toggle section menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="links" id="navlinks"><a href="#executive">Office of the President and Departments - Executive Branch</a><a href="#bureaus">Bureaus, Commissions and Other Agencies</a><a href="#goccs">Government-Owned and Controlled Corporations (GOCCs)</a></div></div></nav>
 <header class="hero"><div class="wrap">
 <h1>Philippine National Government Agencies</h1>
-<p>Addresses and websites of 62 national agencies and government corporations. Draft as of October 2026; please verify details with each agency.</p>
 </div></header>
 <div class="bar"><div class="wrap">
 <label><span style="position:absolute;left:-9999px">Search agencies</span><input id="q" type="search" placeholder="Search by agency, acronym, city or website" autocomplete="off"></label>
 <span id="status" role="status" aria-live="polite"></span>
 </div></div>
 <main><div class="wrap">
-<section class="grp"><h2>Office of the President and Departments - Executive Branch<span class="count">24 agencies</span></h2><div class="card"><table><thead><tr><th class="num">No.</th><th>Agency</th><th>Address</th><th>Head of Agency</th><th>Website</th></tr></thead><tbody>
-<tr><td class="num" data-label="No.">1</td><td class="name" data-label="Agency">Office of the President (OP)</td><td data-label="Address">Malacañang Palace, J.P. Laurel St., San Miguel, Manila</td><td data-label="Head of Agency">President</td><td class="web" data-label="Website"><a href="https://op-proper.gov.ph" target="_blank" rel="noopener">op-proper.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">2</td><td class="name" data-label="Agency">Dept. of Agriculture (DA)</td><td data-label="Address">Elliptical Rd., Diliman, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.da.gov.ph" target="_blank" rel="noopener">da.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">3</td><td class="name" data-label="Agency">Dept. of Agrarian Reform (DAR)</td><td data-label="Address">Elliptical Rd., Diliman, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dar.gov.ph" target="_blank" rel="noopener">dar.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">4</td><td class="name" data-label="Agency">Dept. of Budget and Management (DBM)</td><td data-label="Address">Gen. Solano St., San Miguel, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dbm.gov.ph" target="_blank" rel="noopener">dbm.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">5</td><td class="name" data-label="Agency">Dept. of Education (DepEd)</td><td data-label="Address">DepEd Complex, Meralco Ave., Pasig City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.deped.gov.ph" target="_blank" rel="noopener">deped.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">6</td><td class="name" data-label="Agency">Dept. of Energy (DOE)</td><td data-label="Address">Energy Center, Rizal Dr., Bonifacio Global City, Taguig</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.doe.gov.ph" target="_blank" rel="noopener">doe.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">7</td><td class="name" data-label="Agency">Dept. of Environment and Natural Resources (DENR)</td><td data-label="Address">Visayas Ave., Diliman, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://denr.gov.ph" target="_blank" rel="noopener">denr.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">8</td><td class="name" data-label="Agency">Dept. of Finance (DOF)</td><td data-label="Address">BSP Complex, Roxas Blvd., Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dof.gov.ph" target="_blank" rel="noopener">dof.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">9</td><td class="name" data-label="Agency">Dept. of Foreign Affairs (DFA)</td><td data-label="Address">2330 Roxas Blvd., Pasay City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dfa.gov.ph" target="_blank" rel="noopener">dfa.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">10</td><td class="name" data-label="Agency">Dept. of Health (DOH)</td><td data-label="Address">San Lazaro Compound, Rizal Ave., Sta. Cruz, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.doh.gov.ph" target="_blank" rel="noopener">doh.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">11</td><td class="name" data-label="Agency">Dept. of the Interior and Local Government (DILG)</td><td data-label="Address">DILG-NAPOLCOM Center, EDSA cor. Quezon Ave., Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dilg.gov.ph" target="_blank" rel="noopener">dilg.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">12</td><td class="name" data-label="Agency">Dept. of Justice (DOJ)</td><td data-label="Address">Padre Faura St., Ermita, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.doj.gov.ph" target="_blank" rel="noopener">doj.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">13</td><td class="name" data-label="Agency">Dept. of Labor and Employment (DOLE)</td><td data-label="Address">Muralla St., Intramuros, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dole.gov.ph" target="_blank" rel="noopener">dole.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">14</td><td class="name" data-label="Agency">Dept. of National Defense (DND)</td><td data-label="Address">Camp Emilio Aguinaldo, EDSA, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dnd.gov.ph" target="_blank" rel="noopener">dnd.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">15</td><td class="name" data-label="Agency">Dept. of Public Works and Highways (DPWH)</td><td data-label="Address">Bonifacio Drive, Port Area, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dpwh.gov.ph" target="_blank" rel="noopener">dpwh.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">16</td><td class="name" data-label="Agency">Dept. of Science and Technology (DOST)</td><td data-label="Address">Gen. Santos Ave., Bicutan, Taguig City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dost.gov.ph" target="_blank" rel="noopener">dost.gov.ph</a></td></tr>
+<section class="grp" id="executive"><h2>Office of the President and Departments - Executive Branch<span class="count">24 agencies</span></h2><div class="card"><table><thead><tr><th class="num">No.</th><th>Agency</th><th>Address</th><th>Head of Agency</th><th>Website</th><th>Regional Offices</th></tr></thead><tbody>
+<tr><td class="num" data-label="No.">1</td><td class="name" data-label="Agency">Office of the President (OP)</td><td data-label="Address">Malacañang Palace, J.P. Laurel St., San Miguel, Manila</td><td data-label="Head of Agency">President</td><td class="web" data-label="Website"><a href="https://op-proper.gov.ph" target="_blank" rel="noopener">op-proper.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">2</td><td class="name" data-label="Agency">Dept. of Agriculture (DA)</td><td data-label="Address">Elliptical Rd., Diliman, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.da.gov.ph" target="_blank" rel="noopener">da.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">3</td><td class="name" data-label="Agency">Dept. of Agrarian Reform (DAR)</td><td data-label="Address">Elliptical Rd., Diliman, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dar.gov.ph" target="_blank" rel="noopener">dar.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">4</td><td class="name" data-label="Agency">Dept. of Budget and Management (DBM)</td><td data-label="Address">Gen. Solano St., San Miguel, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dbm.gov.ph" target="_blank" rel="noopener">dbm.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">5</td><td class="name" data-label="Agency">Dept. of Education (DepEd)</td><td data-label="Address">DepEd Complex, Meralco Ave., Pasig City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.deped.gov.ph" target="_blank" rel="noopener">deped.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">6</td><td class="name" data-label="Agency">Dept. of Energy (DOE)</td><td data-label="Address">Energy Center, Rizal Dr., Bonifacio Global City, Taguig</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.doe.gov.ph" target="_blank" rel="noopener">doe.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr>
+  <td class="num" data-label="No.">7</td>
+
+  <td class="name" data-label="Agency">
+    Dept. of Environment and Natural Resources (DENR)
+  </td>
+
+  <td data-label="Address">
+    Visayas Ave., Diliman, Quezon City
+  </td>
+
+  <td data-label="Head of Agency">
+    Secretary
+  </td>
+
+  <td class="web" data-label="Website">
+    <a href="https://denr.gov.ph/" target="_blank" rel="noopener">
+      denr.gov.ph
+    </a>
+  </td>
+
+  <td data-label="DENR Regional Offices">
+
+    <details class="field-offices">
+      <summary>View DENR Regional Websites</summary>
+
+      <div class="field-office-list">
+
+        <div class="field-office">
+          <a href="https://car.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Cordillera Administrative Region (CAR)
+          </a>
+          <small>https://car.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://ncr.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR National Capital Region (NCR)
+          </a>
+          <small>https://ncr.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r1.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region I – Ilocos Region
+          </a>
+          <small>https://r1.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r2.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region II – Cagayan Valley
+          </a>
+          <small>https://r2.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r3.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region III – Central Luzon
+          </a>
+          <small>https://r3.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r4a.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region IV-A – CALABARZON
+          </a>
+          <small>https://r4a.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r4b.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region IV-B – MIMAROPA
+          </a>
+          <small>https://r4b.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r5.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region V – Bicol Region
+          </a>
+          <small>https://r5.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r6.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region VI – Western Visayas
+          </a>
+          <small>https://r6.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r7.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region VII – Central Visayas
+          </a>
+          <small>https://r7.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r8.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region VIII – Eastern Visayas
+          </a>
+          <small>https://r8.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r9.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region IX – Zamboanga Peninsula
+          </a>
+          <small>https://r9.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r10.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region X – Northern Mindanao
+          </a>
+          <small>https://r10.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r11.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region XI – Davao Region
+          </a>
+          <small>https://r11.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://r12.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region XII – SOCCSKSARGEN
+          </a>
+          <small>https://r12.denr.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://caraga.denr.gov.ph/" target="_blank" rel="noopener">
+            DENR Region XIII – CARAGA
+          </a>
+          <small>https://caraga.denr.gov.ph/</small>
+        </div>
+
+      </div>
+    </details>
+
+  </td>
+</tr>
+
+<tr><td class="num" data-label="No.">8</td><td class="name" data-label="Agency">Dept. of Finance (DOF)</td><td data-label="Address">BSP Complex, Roxas Blvd., Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dof.gov.ph" target="_blank" rel="noopener">dof.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">9</td><td class="name" data-label="Agency">Dept. of Foreign Affairs (DFA)</td><td data-label="Address">2330 Roxas Blvd., Pasay City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dfa.gov.ph" target="_blank" rel="noopener">dfa.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">10</td><td class="name" data-label="Agency">Dept. of Health (DOH)</td><td data-label="Address">San Lazaro Compound, Rizal Ave., Sta. Cruz, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.doh.gov.ph" target="_blank" rel="noopener">doh.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">11</td><td class="name" data-label="Agency">Dept. of the Interior and Local Government (DILG)</td><td data-label="Address">DILG-NAPOLCOM Center, EDSA cor. Quezon Ave., Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dilg.gov.ph" target="_blank" rel="noopener">dilg.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">12</td><td class="name" data-label="Agency">Dept. of Justice (DOJ)</td><td data-label="Address">Padre Faura St., Ermita, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.doj.gov.ph" target="_blank" rel="noopener">doj.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">13</td><td class="name" data-label="Agency">Dept. of Labor and Employment (DOLE)</td><td data-label="Address">Muralla St., Intramuros, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dole.gov.ph" target="_blank" rel="noopener">dole.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">14</td><td class="name" data-label="Agency">Dept. of National Defense (DND)</td><td data-label="Address">Camp Emilio Aguinaldo, EDSA, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dnd.gov.ph" target="_blank" rel="noopener">dnd.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">15</td><td class="name" data-label="Agency">Dept. of Public Works and Highways (DPWH)</td><td data-label="Address">Bonifacio Drive, Port Area, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dpwh.gov.ph" target="_blank" rel="noopener">dpwh.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">16</td><td class="name" data-label="Agency">Dept. of Science and Technology (DOST)</td><td data-label="Address">Gen. Santos Ave., Bicutan, Taguig City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dost.gov.ph" target="_blank" rel="noopener">dost.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
 <tr>
   <td class="num" data-label="No.">17</td>
 
@@ -284,55 +468,55 @@ tbody tr:hover{background:var(--hover)}
   </td>
 </tr>
 
-<tr><td class="num" data-label="No.">18</td><td class="name" data-label="Agency">Dept. of Tourism (DOT)</td><td data-label="Address">Sen. Gil Puyat Ave., Makati City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://tourism.gov.ph" target="_blank" rel="noopener">tourism.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">19</td><td class="name" data-label="Agency">Dept. of Trade and Industry (DTI)</td><td data-label="Address">361 Sen. Gil Puyat Ave., Makati City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dti.gov.ph" target="_blank" rel="noopener">dti.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">20</td><td class="name" data-label="Agency">Dept. of Transportation (DOTr)</td><td data-label="Address">Columbia Tower, Ortigas Ave., Mandaluyong City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://dotr.gov.ph" target="_blank" rel="noopener">dotr.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">21</td><td class="name" data-label="Agency">Dept. of Information and Communications Technology (DICT)</td><td data-label="Address">C.P. Garcia Ave., UP Technology Park, Diliman, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://dict.gov.ph" target="_blank" rel="noopener">dict.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">22</td><td class="name" data-label="Agency">Dept. of Human Settlements and Urban Development (DHSUD)</td><td data-label="Address">Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://dhsud.gov.ph" target="_blank" rel="noopener">dhsud.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">23</td><td class="name" data-label="Agency">Dept. of Migrant Workers (DMW)</td><td data-label="Address">Ortigas Ave. cor. EDSA, Mandaluyong City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://dmw.gov.ph" target="_blank" rel="noopener">dmw.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">24</td><td class="name" data-label="Agency">Dept. of Economy, Planning, and Development (DEPDev)</td><td data-label="Address">12 St. Josemaria Escriva Dr., Ortigas Center, Pasig City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://depdev.gov.ph" target="_blank" rel="noopener">depdev.gov.ph</a></td></tr>
+<tr><td class="num" data-label="No.">18</td><td class="name" data-label="Agency">Dept. of Tourism (DOT)</td><td data-label="Address">Sen. Gil Puyat Ave., Makati City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://tourism.gov.ph" target="_blank" rel="noopener">tourism.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">19</td><td class="name" data-label="Agency">Dept. of Trade and Industry (DTI)</td><td data-label="Address">361 Sen. Gil Puyat Ave., Makati City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dti.gov.ph" target="_blank" rel="noopener">dti.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">20</td><td class="name" data-label="Agency">Dept. of Transportation (DOTr)</td><td data-label="Address">Columbia Tower, Ortigas Ave., Mandaluyong City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://dotr.gov.ph" target="_blank" rel="noopener">dotr.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">21</td><td class="name" data-label="Agency">Dept. of Information and Communications Technology (DICT)</td><td data-label="Address">C.P. Garcia Ave., UP Technology Park, Diliman, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://dict.gov.ph" target="_blank" rel="noopener">dict.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">22</td><td class="name" data-label="Agency">Dept. of Human Settlements and Urban Development (DHSUD)</td><td data-label="Address">Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://dhsud.gov.ph" target="_blank" rel="noopener">dhsud.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">23</td><td class="name" data-label="Agency">Dept. of Migrant Workers (DMW)</td><td data-label="Address">Ortigas Ave. cor. EDSA, Mandaluyong City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://dmw.gov.ph" target="_blank" rel="noopener">dmw.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">24</td><td class="name" data-label="Agency">Dept. of Economy, Planning, and Development (DEPDev)</td><td data-label="Address">12 St. Josemaria Escriva Dr., Ortigas Center, Pasig City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://depdev.gov.ph" target="_blank" rel="noopener">depdev.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
 </tbody></table></div></section>
-<section class="grp"><h2>Bureaus, Commissions and Other Agencies<span class="count">14 agencies</span></h2><div class="card"><table><thead><tr><th class="num">No.</th><th>Agency</th><th>Address</th><th>Head of Agency</th><th>Website</th></tr></thead><tbody>
-<tr><td class="num" data-label="No.">25</td><td class="name" data-label="Agency">Bureau of Internal Revenue (BIR)</td><td data-label="Address">BIR National Office Bldg., Agham Rd., Diliman, Quezon City</td><td data-label="Head of Agency">Commissioner</td><td class="web" data-label="Website"><a href="https://www.bir.gov.ph" target="_blank" rel="noopener">bir.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">26</td><td class="name" data-label="Agency">Bureau of Customs (BOC)</td><td data-label="Address">OCOM Bldg., South Harbor, Port Area, Manila</td><td data-label="Head of Agency">Commissioner</td><td class="web" data-label="Website"><a href="https://customs.gov.ph" target="_blank" rel="noopener">customs.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">27</td><td class="name" data-label="Agency">National Bureau of Investigation (NBI)</td><td data-label="Address">Taft Ave., Ermita, Manila</td><td data-label="Head of Agency">Director</td><td class="web" data-label="Website"><a href="https://nbi.gov.ph" target="_blank" rel="noopener">nbi.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">28</td><td class="name" data-label="Agency">Philippine National Police (PNP)</td><td data-label="Address">Camp Crame, EDSA, Quezon City</td><td data-label="Head of Agency">Chief, PNP</td><td class="web" data-label="Website"><a href="https://www.pnp.gov.ph" target="_blank" rel="noopener">pnp.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">29</td><td class="name" data-label="Agency">National Privacy Commission (NPC)</td><td data-label="Address">Delegation Bldg., PICC Complex, Roxas Blvd., Pasay City</td><td data-label="Head of Agency">Commissioner</td><td class="web" data-label="Website"><a href="https://privacy.gov.ph" target="_blank" rel="noopener">privacy.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">30</td><td class="name" data-label="Agency">National Telecommunications Commission (NTC)</td><td data-label="Address">BIR Rd., East Triangle, Diliman, Quezon City</td><td data-label="Head of Agency">Commissioner</td><td class="web" data-label="Website"><a href="https://ntc.gov.ph" target="_blank" rel="noopener">ntc.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">31</td><td class="name" data-label="Agency">Securities and Exchange Commission (SEC)</td><td data-label="Address">SEC Bldg., EDSA, Greenhills, Mandaluyong City</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://www.sec.gov.ph" target="_blank" rel="noopener">sec.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">32</td><td class="name" data-label="Agency">Commission on Higher Education (CHED)</td><td data-label="Address">C.P. Garcia Ave., UP Diliman, Quezon City</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://ched.gov.ph" target="_blank" rel="noopener">ched.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">33</td><td class="name" data-label="Agency">Technical Education and Skills Development Authority (TESDA)</td><td data-label="Address">TESDA Complex, East Service Rd., Taguig City</td><td data-label="Head of Agency">Director General</td><td class="web" data-label="Website"><a href="https://www.tesda.gov.ph" target="_blank" rel="noopener">tesda.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">34</td><td class="name" data-label="Agency">Philippine Statistics Authority (PSA)</td><td data-label="Address">PSA Complex, East Ave., Diliman, Quezon City</td><td data-label="Head of Agency">National Statistician</td><td class="web" data-label="Website"><a href="https://psa.gov.ph" target="_blank" rel="noopener">psa.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">35</td><td class="name" data-label="Agency">Civil Service Commission (CSC)</td><td data-label="Address">CSC Complex, Constitution Hills, Batasan, Quezon City</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://www.csc.gov.ph" target="_blank" rel="noopener">csc.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">36</td><td class="name" data-label="Agency">Commission on Audit (COA)</td><td data-label="Address">Commonwealth Ave., Batasan Hills, Quezon City</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://www.coa.gov.ph" target="_blank" rel="noopener">coa.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">37</td><td class="name" data-label="Agency">Commission on Elections (COMELEC)</td><td data-label="Address">Palacio del Gobernador, Intramuros, Manila</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://comelec.gov.ph" target="_blank" rel="noopener">comelec.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">38</td><td class="name" data-label="Agency">Supreme Court of the Philippines</td><td data-label="Address">Padre Faura St., Ermita, Manila</td><td data-label="Head of Agency">Chief Justice</td><td class="web" data-label="Website"><a href="https://sc.judiciary.gov.ph" target="_blank" rel="noopener">sc.judiciary.gov.ph</a></td></tr>
+<section class="grp" id="bureaus"><h2>Bureaus, Commissions and Other Agencies<span class="count">14 agencies</span></h2><div class="card"><table><thead><tr><th class="num">No.</th><th>Agency</th><th>Address</th><th>Head of Agency</th><th>Website</th><th>Regional Offices</th></tr></thead><tbody>
+<tr><td class="num" data-label="No.">25</td><td class="name" data-label="Agency">Bureau of Internal Revenue (BIR)</td><td data-label="Address">BIR National Office Bldg., Agham Rd., Diliman, Quezon City</td><td data-label="Head of Agency">Commissioner</td><td class="web" data-label="Website"><a href="https://www.bir.gov.ph" target="_blank" rel="noopener">bir.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">26</td><td class="name" data-label="Agency">Bureau of Customs (BOC)</td><td data-label="Address">OCOM Bldg., South Harbor, Port Area, Manila</td><td data-label="Head of Agency">Commissioner</td><td class="web" data-label="Website"><a href="https://customs.gov.ph" target="_blank" rel="noopener">customs.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">27</td><td class="name" data-label="Agency">National Bureau of Investigation (NBI)</td><td data-label="Address">Taft Ave., Ermita, Manila</td><td data-label="Head of Agency">Director</td><td class="web" data-label="Website"><a href="https://nbi.gov.ph" target="_blank" rel="noopener">nbi.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">28</td><td class="name" data-label="Agency">Philippine National Police (PNP)</td><td data-label="Address">Camp Crame, EDSA, Quezon City</td><td data-label="Head of Agency">Chief, PNP</td><td class="web" data-label="Website"><a href="https://www.pnp.gov.ph" target="_blank" rel="noopener">pnp.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">29</td><td class="name" data-label="Agency">National Privacy Commission (NPC)</td><td data-label="Address">Delegation Bldg., PICC Complex, Roxas Blvd., Pasay City</td><td data-label="Head of Agency">Commissioner</td><td class="web" data-label="Website"><a href="https://privacy.gov.ph" target="_blank" rel="noopener">privacy.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">30</td><td class="name" data-label="Agency">National Telecommunications Commission (NTC)</td><td data-label="Address">BIR Rd., East Triangle, Diliman, Quezon City</td><td data-label="Head of Agency">Commissioner</td><td class="web" data-label="Website"><a href="https://ntc.gov.ph" target="_blank" rel="noopener">ntc.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">31</td><td class="name" data-label="Agency">Securities and Exchange Commission (SEC)</td><td data-label="Address">SEC Bldg., EDSA, Greenhills, Mandaluyong City</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://www.sec.gov.ph" target="_blank" rel="noopener">sec.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">32</td><td class="name" data-label="Agency">Commission on Higher Education (CHED)</td><td data-label="Address">C.P. Garcia Ave., UP Diliman, Quezon City</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://ched.gov.ph" target="_blank" rel="noopener">ched.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">33</td><td class="name" data-label="Agency">Technical Education and Skills Development Authority (TESDA)</td><td data-label="Address">TESDA Complex, East Service Rd., Taguig City</td><td data-label="Head of Agency">Director General</td><td class="web" data-label="Website"><a href="https://www.tesda.gov.ph" target="_blank" rel="noopener">tesda.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">34</td><td class="name" data-label="Agency">Philippine Statistics Authority (PSA)</td><td data-label="Address">PSA Complex, East Ave., Diliman, Quezon City</td><td data-label="Head of Agency">National Statistician</td><td class="web" data-label="Website"><a href="https://psa.gov.ph" target="_blank" rel="noopener">psa.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">35</td><td class="name" data-label="Agency">Civil Service Commission (CSC)</td><td data-label="Address">CSC Complex, Constitution Hills, Batasan, Quezon City</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://www.csc.gov.ph" target="_blank" rel="noopener">csc.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">36</td><td class="name" data-label="Agency">Commission on Audit (COA)</td><td data-label="Address">Commonwealth Ave., Batasan Hills, Quezon City</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://www.coa.gov.ph" target="_blank" rel="noopener">coa.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">37</td><td class="name" data-label="Agency">Commission on Elections (COMELEC)</td><td data-label="Address">Palacio del Gobernador, Intramuros, Manila</td><td data-label="Head of Agency">Chairperson</td><td class="web" data-label="Website"><a href="https://comelec.gov.ph" target="_blank" rel="noopener">comelec.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">38</td><td class="name" data-label="Agency">Supreme Court of the Philippines</td><td data-label="Address">Padre Faura St., Ermita, Manila</td><td data-label="Head of Agency">Chief Justice</td><td class="web" data-label="Website"><a href="https://sc.judiciary.gov.ph" target="_blank" rel="noopener">sc.judiciary.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
 </tbody></table></div></section>
-<section class="grp"><h2>Government-Owned and Controlled Corporations (GOCCs)<span class="count">24 corporations</span></h2><div class="card"><table><thead><tr><th class="num">No.</th><th>Agency</th><th>Address</th><th>Head of Agency</th><th>Website</th></tr></thead><tbody>
-<tr><td class="num" data-label="No.">39</td><td class="name" data-label="Agency">Land Bank of the Philippines (LANDBANK)</td><td data-label="Address">LANDBANK Plaza, 1598 M.H. del Pilar cor. Dr. J. Quintos Sts., Malate, Manila</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.landbank.com" target="_blank" rel="noopener">landbank.com</a></td></tr>
-<tr><td class="num" data-label="No.">40</td><td class="name" data-label="Agency">Development Bank of the Philippines (DBP)</td><td data-label="Address">Sen. Gil Puyat Ave. cor. Makati Ave., Makati City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.dbp.ph" target="_blank" rel="noopener">dbp.ph</a></td></tr>
-<tr><td class="num" data-label="No.">41</td><td class="name" data-label="Agency">Government Service Insurance System (GSIS)</td><td data-label="Address">Financial Center, Roxas Blvd., Pasay City</td><td data-label="Head of Agency">President and General Manager</td><td class="web" data-label="Website"><a href="https://www.gsis.gov.ph" target="_blank" rel="noopener">gsis.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">42</td><td class="name" data-label="Agency">Social Security System (SSS)</td><td data-label="Address">East Ave., Diliman, Quezon City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.sss.gov.ph" target="_blank" rel="noopener">sss.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">43</td><td class="name" data-label="Agency">Philippine Health Insurance Corporation (PhilHealth)</td><td data-label="Address">Citystate Centre, 709 Shaw Blvd., Pasig City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.philhealth.gov.ph" target="_blank" rel="noopener">philhealth.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">44</td><td class="name" data-label="Agency">Home Development Mutual Fund (Pag-IBIG Fund)</td><td data-label="Address">ADB Ave., Ortigas Center, Pasig City</td><td data-label="Head of Agency">Chief Executive Officer</td><td class="web" data-label="Website"><a href="https://www.pagibigfund.gov.ph" target="_blank" rel="noopener">pagibigfund.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">45</td><td class="name" data-label="Agency">Philippine Deposit Insurance Corporation (PDIC)</td><td data-label="Address">6782 Ayala Ave., Makati City</td><td data-label="Head of Agency">President</td><td class="web" data-label="Website"><a href="https://www.pdic.gov.ph" target="_blank" rel="noopener">pdic.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">46</td><td class="name" data-label="Agency">Philippine Ports Authority (PPA)</td><td data-label="Address">Bonifacio Drive, Port Area, Manila</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://www.ppa.com.ph" target="_blank" rel="noopener">ppa.com.ph</a></td></tr>
-<tr><td class="num" data-label="No.">47</td><td class="name" data-label="Agency">Philippine National Railways (PNR)</td><td data-label="Address">Tutuban Station, C.M. Recto Ave., Tondo, Manila</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://www.pnr.gov.ph" target="_blank" rel="noopener">pnr.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">48</td><td class="name" data-label="Agency">Light Rail Transit Authority (LRTA)</td><td data-label="Address">Aurora Blvd., Pasay City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://lrta.gov.ph" target="_blank" rel="noopener">lrta.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">49</td><td class="name" data-label="Agency">Metropolitan Waterworks and Sewerage System (MWSS)</td><td data-label="Address">Katipunan Rd., Balara, Quezon City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://www.mwss.gov.ph" target="_blank" rel="noopener">mwss.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">50</td><td class="name" data-label="Agency">Local Water Utilities Administration (LWUA)</td><td data-label="Address">Katipunan Rd., Balara, Quezon City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://www.lwua.gov.ph" target="_blank" rel="noopener">lwua.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">51</td><td class="name" data-label="Agency">National Power Corporation (NPC)</td><td data-label="Address">Quezon Ave. cor. BIR Rd., Diliman, Quezon City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.napocor.gov.ph" target="_blank" rel="noopener">napocor.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">52</td><td class="name" data-label="Agency">National Transmission Corporation (TransCo)</td><td data-label="Address">BIR Rd. cor. Quezon Ave., Diliman, Quezon City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.transco.ph" target="_blank" rel="noopener">transco.ph</a></td></tr>
-<tr><td class="num" data-label="No.">53</td><td class="name" data-label="Agency">Philippine National Oil Company (PNOC)</td><td data-label="Address">PNPC Complex, Fort Bonifacio, Taguig City</td><td data-label="Head of Agency">President</td><td class="web" data-label="Website"><a href="https://www.pnoc.com.ph" target="_blank" rel="noopener">pnoc.com.ph</a></td></tr>
-<tr><td class="num" data-label="No.">54</td><td class="name" data-label="Agency">National Housing Authority (NHA)</td><td data-label="Address">Elliptical Rd., Diliman, Quezon City</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://nha.gov.ph" target="_blank" rel="noopener">nha.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">55</td><td class="name" data-label="Agency">National Food Authority (NFA)</td><td data-label="Address">101 E. Rodriguez Sr. Ave., Quezon City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://nfa.gov.ph" target="_blank" rel="noopener">nfa.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">56</td><td class="name" data-label="Agency">National Irrigation Administration (NIA)</td><td data-label="Address">EDSA, Diliman, Quezon City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://www.nia.gov.ph" target="_blank" rel="noopener">nia.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">57</td><td class="name" data-label="Agency">Laguna Lake Development Authority (LLDA)</td><td data-label="Address">National Ecology Center, East Ave., Quezon City</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://llda.gov.ph" target="_blank" rel="noopener">llda.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">58</td><td class="name" data-label="Agency">Philippine Charity Sweepstakes Office (PCSO)</td><td data-label="Address">Shaw Blvd. cor. Brixton St., Pasig City</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://www.pcso.gov.ph" target="_blank" rel="noopener">pcso.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">59</td><td class="name" data-label="Agency">Philippine Economic Zone Authority (PEZA)</td><td data-label="Address">Roxas Blvd. cor. San Luis St., Pasay City</td><td data-label="Head of Agency">Director General</td><td class="web" data-label="Website"><a href="https://www.peza.gov.ph" target="_blank" rel="noopener">peza.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">60</td><td class="name" data-label="Agency">Bases Conversion and Development Authority (BCDA)</td><td data-label="Address">Bonifacio Technology Center, 31st St. cor. 2nd Ave., BGC, Taguig City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://bcda.gov.ph" target="_blank" rel="noopener">bcda.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">61</td><td class="name" data-label="Agency">Philippine Postal Corporation (PHLPost)</td><td data-label="Address">Liwasang Bonifacio, Manila</td><td data-label="Head of Agency">Postmaster General</td><td class="web" data-label="Website"><a href="https://phlpost.gov.ph" target="_blank" rel="noopener">phlpost.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">62</td><td class="name" data-label="Agency">Cultural Center of the Philippines (CCP)</td><td data-label="Address">CCP Complex, Roxas Blvd., Pasay City</td><td data-label="Head of Agency">President</td><td class="web" data-label="Website"><a href="https://www.culturalcenter.gov.ph" target="_blank" rel="noopener">culturalcenter.gov.ph</a></td></tr>
+<section class="grp" id="goccs"><h2>Government-Owned and Controlled Corporations (GOCCs)<span class="count">24 corporations</span></h2><div class="card"><table><thead><tr><th class="num">No.</th><th>Agency</th><th>Address</th><th>Head of Agency</th><th>Website</th><th>Regional Offices</th></tr></thead><tbody>
+<tr><td class="num" data-label="No.">39</td><td class="name" data-label="Agency">Land Bank of the Philippines (LANDBANK)</td><td data-label="Address">LANDBANK Plaza, 1598 M.H. del Pilar cor. Dr. J. Quintos Sts., Malate, Manila</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.landbank.com" target="_blank" rel="noopener">landbank.com</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">40</td><td class="name" data-label="Agency">Development Bank of the Philippines (DBP)</td><td data-label="Address">Sen. Gil Puyat Ave. cor. Makati Ave., Makati City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.dbp.ph" target="_blank" rel="noopener">dbp.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">41</td><td class="name" data-label="Agency">Government Service Insurance System (GSIS)</td><td data-label="Address">Financial Center, Roxas Blvd., Pasay City</td><td data-label="Head of Agency">President and General Manager</td><td class="web" data-label="Website"><a href="https://www.gsis.gov.ph" target="_blank" rel="noopener">gsis.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">42</td><td class="name" data-label="Agency">Social Security System (SSS)</td><td data-label="Address">East Ave., Diliman, Quezon City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.sss.gov.ph" target="_blank" rel="noopener">sss.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">43</td><td class="name" data-label="Agency">Philippine Health Insurance Corporation (PhilHealth)</td><td data-label="Address">Citystate Centre, 709 Shaw Blvd., Pasig City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.philhealth.gov.ph" target="_blank" rel="noopener">philhealth.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">44</td><td class="name" data-label="Agency">Home Development Mutual Fund (Pag-IBIG Fund)</td><td data-label="Address">ADB Ave., Ortigas Center, Pasig City</td><td data-label="Head of Agency">Chief Executive Officer</td><td class="web" data-label="Website"><a href="https://www.pagibigfund.gov.ph" target="_blank" rel="noopener">pagibigfund.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">45</td><td class="name" data-label="Agency">Philippine Deposit Insurance Corporation (PDIC)</td><td data-label="Address">6782 Ayala Ave., Makati City</td><td data-label="Head of Agency">President</td><td class="web" data-label="Website"><a href="https://www.pdic.gov.ph" target="_blank" rel="noopener">pdic.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">46</td><td class="name" data-label="Agency">Philippine Ports Authority (PPA)</td><td data-label="Address">Bonifacio Drive, Port Area, Manila</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://www.ppa.com.ph" target="_blank" rel="noopener">ppa.com.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">47</td><td class="name" data-label="Agency">Philippine National Railways (PNR)</td><td data-label="Address">Tutuban Station, C.M. Recto Ave., Tondo, Manila</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://www.pnr.gov.ph" target="_blank" rel="noopener">pnr.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">48</td><td class="name" data-label="Agency">Light Rail Transit Authority (LRTA)</td><td data-label="Address">Aurora Blvd., Pasay City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://lrta.gov.ph" target="_blank" rel="noopener">lrta.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">49</td><td class="name" data-label="Agency">Metropolitan Waterworks and Sewerage System (MWSS)</td><td data-label="Address">Katipunan Rd., Balara, Quezon City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://www.mwss.gov.ph" target="_blank" rel="noopener">mwss.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">50</td><td class="name" data-label="Agency">Local Water Utilities Administration (LWUA)</td><td data-label="Address">Katipunan Rd., Balara, Quezon City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://www.lwua.gov.ph" target="_blank" rel="noopener">lwua.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">51</td><td class="name" data-label="Agency">National Power Corporation (NPC)</td><td data-label="Address">Quezon Ave. cor. BIR Rd., Diliman, Quezon City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.napocor.gov.ph" target="_blank" rel="noopener">napocor.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">52</td><td class="name" data-label="Agency">National Transmission Corporation (TransCo)</td><td data-label="Address">BIR Rd. cor. Quezon Ave., Diliman, Quezon City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://www.transco.ph" target="_blank" rel="noopener">transco.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">53</td><td class="name" data-label="Agency">Philippine National Oil Company (PNOC)</td><td data-label="Address">PNPC Complex, Fort Bonifacio, Taguig City</td><td data-label="Head of Agency">President</td><td class="web" data-label="Website"><a href="https://www.pnoc.com.ph" target="_blank" rel="noopener">pnoc.com.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">54</td><td class="name" data-label="Agency">National Housing Authority (NHA)</td><td data-label="Address">Elliptical Rd., Diliman, Quezon City</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://nha.gov.ph" target="_blank" rel="noopener">nha.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">55</td><td class="name" data-label="Agency">National Food Authority (NFA)</td><td data-label="Address">101 E. Rodriguez Sr. Ave., Quezon City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://nfa.gov.ph" target="_blank" rel="noopener">nfa.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">56</td><td class="name" data-label="Agency">National Irrigation Administration (NIA)</td><td data-label="Address">EDSA, Diliman, Quezon City</td><td data-label="Head of Agency">Administrator</td><td class="web" data-label="Website"><a href="https://www.nia.gov.ph" target="_blank" rel="noopener">nia.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">57</td><td class="name" data-label="Agency">Laguna Lake Development Authority (LLDA)</td><td data-label="Address">National Ecology Center, East Ave., Quezon City</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://llda.gov.ph" target="_blank" rel="noopener">llda.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">58</td><td class="name" data-label="Agency">Philippine Charity Sweepstakes Office (PCSO)</td><td data-label="Address">Shaw Blvd. cor. Brixton St., Pasig City</td><td data-label="Head of Agency">General Manager</td><td class="web" data-label="Website"><a href="https://www.pcso.gov.ph" target="_blank" rel="noopener">pcso.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">59</td><td class="name" data-label="Agency">Philippine Economic Zone Authority (PEZA)</td><td data-label="Address">Roxas Blvd. cor. San Luis St., Pasay City</td><td data-label="Head of Agency">Director General</td><td class="web" data-label="Website"><a href="https://www.peza.gov.ph" target="_blank" rel="noopener">peza.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">60</td><td class="name" data-label="Agency">Bases Conversion and Development Authority (BCDA)</td><td data-label="Address">Bonifacio Technology Center, 31st St. cor. 2nd Ave., BGC, Taguig City</td><td data-label="Head of Agency">President and CEO</td><td class="web" data-label="Website"><a href="https://bcda.gov.ph" target="_blank" rel="noopener">bcda.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">61</td><td class="name" data-label="Agency">Philippine Postal Corporation (PHLPost)</td><td data-label="Address">Liwasang Bonifacio, Manila</td><td data-label="Head of Agency">Postmaster General</td><td class="web" data-label="Website"><a href="https://phlpost.gov.ph" target="_blank" rel="noopener">phlpost.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
+<tr><td class="num" data-label="No.">62</td><td class="name" data-label="Agency">Cultural Center of the Philippines (CCP)</td><td data-label="Address">CCP Complex, Roxas Blvd., Pasay City</td><td data-label="Head of Agency">President</td><td class="web" data-label="Website"><a href="https://www.culturalcenter.gov.ph" target="_blank" rel="noopener">culturalcenter.gov.ph</a></td><td data-label="Regional Offices"></td></tr>
 </tbody></table></div></section>
 <p class="empty" id="empty">Nothing matches your search. Try an acronym like DOH, or a city like Pasig.</p>
 </div></main>
@@ -348,6 +532,21 @@ tbody tr:hover{background:var(--hover)}
   em.style.display=shown?'none':'block';
  }
  q.addEventListener('input',run);run();
+})();
+</script>
+<script>
+(function(){
+ var nav=document.getElementById('topnav'),btn=document.getElementById('navbtn'),links=[].slice.call(nav.querySelectorAll('.links a'));
+ function setOpen(o){nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)}
+ btn.addEventListener('click',function(){setOpen(!nav.classList.contains('open'))});
+ links.forEach(function(a){a.addEventListener('click',function(){setOpen(false)})});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false)});
+ function mark(){
+  var y=window.scrollY+170,cur=null;
+  links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t&&!t.hidden&&t.offsetTop<=y)cur=a});
+  links.forEach(function(a){a.classList.toggle('active',a===cur)});
+ }
+ window.addEventListener('scroll',mark,{passive:true});document.getElementById('q').addEventListener('input',mark);mark();
 })();
 </script>
 </body>
