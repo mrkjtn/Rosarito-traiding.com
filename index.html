@@ -10,6 +10,68 @@
 <style>
 :root{--bg:#f3f6fb;--surface:#fff;--ink:#17212f;--muted:#5b6778;--line:#dce3ee;--brand:#0b3c8c;--hero:#0b3c8c;--hero-ink:#fff;--th:#e8eef9;--hover:#f1f6ff;--link:#0b3c8c;--field:#fff;
 --serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.field-offices{
+  min-width:320px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--field);
+  overflow:hidden;
+}
+
+.field-offices summary{
+  cursor:pointer;
+  padding:10px 12px;
+  color:var(--brand);
+  font-weight:600;
+  font-size:14px;
+  user-select:none;
+}
+
+.field-offices summary:hover{
+  background:var(--hover);
+}
+
+.field-office-list{
+  border-top:1px solid var(--line);
+}
+
+.field-office{
+  padding:10px 12px;
+  border-bottom:1px solid var(--line);
+}
+
+.field-office:last-child{
+  border-bottom:0;
+}
+
+.field-office a{
+  display:block;
+  color:var(--link);
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  overflow-wrap:anywhere;
+}
+
+.field-office small{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:12px;
+  overflow-wrap:anywhere;
+}
+
+.field-office:hover{
+  background:var(--hover);
+}
+
+.field-office a:focus-visible,
+.field-offices summary:focus-visible{
+  outline:3px solid #3b82f6;
+  outline-offset:2px;
+}
+
+
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1320;--surface:#151e2e;--ink:#e8edf6;--muted:#9aa8bd;--line:#26334b;--brand:#8fb3ff;--hero:#10244d;--th:#1a2740;--hover:#1b2840;--link:#8fb3ff;--field:#0f1726}}
 :root[data-theme="dark"]{--bg:#0d1320;--surface:#151e2e;--ink:#e8edf6;--muted:#9aa8bd;--line:#26334b;--brand:#8fb3ff;--hero:#10244d;--th:#1a2740;--hover:#1b2840;--link:#8fb3ff;--field:#0f1726}
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -76,7 +138,152 @@ tbody tr:hover{background:var(--hover)}
 <tr><td class="num" data-label="No.">14</td><td class="name" data-label="Agency">Dept. of National Defense (DND)</td><td data-label="Address">Camp Emilio Aguinaldo, EDSA, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dnd.gov.ph" target="_blank" rel="noopener">dnd.gov.ph</a></td></tr>
 <tr><td class="num" data-label="No.">15</td><td class="name" data-label="Agency">Dept. of Public Works and Highways (DPWH)</td><td data-label="Address">Bonifacio Drive, Port Area, Manila</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dpwh.gov.ph" target="_blank" rel="noopener">dpwh.gov.ph</a></td></tr>
 <tr><td class="num" data-label="No.">16</td><td class="name" data-label="Agency">Dept. of Science and Technology (DOST)</td><td data-label="Address">Gen. Santos Ave., Bicutan, Taguig City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dost.gov.ph" target="_blank" rel="noopener">dost.gov.ph</a></td></tr>
-<tr><td class="num" data-label="No.">17</td><td class="name" data-label="Agency">Dept. of Social Welfare and Development (DSWD)</td><td data-label="Address">Batasan Complex, Constitution Hills, Quezon City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dswd.gov.ph" target="_blank" rel="noopener">dswd.gov.ph</a></td></tr>
+<tr>
+  <td class="num" data-label="No.">17</td>
+
+  <td class="name" data-label="Agency">
+    Dept. of Social Welfare and Development (DSWD)
+  </td>
+
+  <td data-label="Address">
+    Batasan Complex, Constitution Hills, Quezon City
+  </td>
+
+  <td data-label="Head of Agency">
+    Secretary
+  </td>
+
+  <td class="web" data-label="Website">
+    <a href="https://www.dswd.gov.ph" target="_blank" rel="noopener">
+      dswd.gov.ph
+    </a>
+  </td>
+
+  <td data-label="DSWD Field Offices">
+
+    <details class="field-offices">
+      <summary>View Field Office Websites</summary>
+
+      <div class="field-office-list">
+
+        <div class="field-office">
+          <a href="https://ncr.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office NCR Official Website
+          </a>
+          <small>https://ncr.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo1.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office I Official Website
+          </a>
+          <small>https://fo1.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo2.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office II Official Website
+          </a>
+          <small>https://fo2.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo3.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office III Official Website
+          </a>
+          <small>https://fo3.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo4a.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office IV-A CALABARZON
+          </a>
+          <small>https://fo4a.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo4b.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office IV-B MIMAROPA
+          </a>
+          <small>https://fo4b.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo5.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office V
+          </a>
+          <small>https://fo5.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo6.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office VI
+          </a>
+          <small>https://fo6.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo7.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office VII
+          </a>
+          <small>https://fo7.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo8.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office VIII
+          </a>
+          <small>https://fo8.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo9.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office IX
+          </a>
+          <small>https://fo9.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo10.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office X
+          </a>
+          <small>https://fo10.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo11.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office XI
+          </a>
+          <small>https://fo11.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://fo12.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office XII
+          </a>
+          <small>https://fo12.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://car.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office CAR
+          </a>
+          <small>https://car.dswd.gov.ph/</small>
+        </div>
+
+        <div class="field-office">
+          <a href="https://caraga.dswd.gov.ph/" target="_blank" rel="noopener">
+            DSWD Field Office CARAGA
+          </a>
+          <small>https://caraga.dswd.gov.ph/</small>
+        </div>
+
+      </div>
+    </details>
+
+  </td>
+</tr>
+
 <tr><td class="num" data-label="No.">18</td><td class="name" data-label="Agency">Dept. of Tourism (DOT)</td><td data-label="Address">Sen. Gil Puyat Ave., Makati City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://tourism.gov.ph" target="_blank" rel="noopener">tourism.gov.ph</a></td></tr>
 <tr><td class="num" data-label="No.">19</td><td class="name" data-label="Agency">Dept. of Trade and Industry (DTI)</td><td data-label="Address">361 Sen. Gil Puyat Ave., Makati City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://www.dti.gov.ph" target="_blank" rel="noopener">dti.gov.ph</a></td></tr>
 <tr><td class="num" data-label="No.">20</td><td class="name" data-label="Agency">Dept. of Transportation (DOTr)</td><td data-label="Address">Columbia Tower, Ortigas Ave., Mandaluyong City</td><td data-label="Head of Agency">Secretary</td><td class="web" data-label="Website"><a href="https://dotr.gov.ph" target="_blank" rel="noopener">dotr.gov.ph</a></td></tr>
