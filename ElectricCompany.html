@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Philippine Electric Cooperatives & Utilities</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+    .topnav {
+  width: 100%;
+  background-color: #151f30;
+  border-bottom: 1px solid #26364b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav .wrap {
+  max-width: 1180px;
+  min-height: 50px;
+  margin: 0 auto;
+  padding: 6px 16px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.35fr 0.4fr 0.85fr;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  column-gap: 22px;
+  box-sizing: border-box;
+}
+
+.topnav a {
+  color: #f5f7fb;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: block;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.topnav a:hover {
+  color: #8ecbff;
+}
+
+@media (max-width: 900px) {
+  .topnav .wrap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 18px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topnav .wrap {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .topnav a {
+    font-size: 12px;
+  }
+}
+:root{--bg:#0a0f1e;--hero:#12254f;--panel:#16213b;--line:#26324f;--text:#e8ecf5;--mute:#9aa6c1;--accent:#7aa2ff;--bar:#0e1730;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f5f7fb;--panel:#fff;--line:#d9e0ee;--text:#14203a;--mute:#5a6785;--accent:#1d4ed8;--bar:#fff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 "Public Sans",system-ui,sans-serif}
+nav{background:var(--bar);border-bottom:1px solid var(--line);padding:14px 24px;font-weight:600;font-size:15px}
+.hero{background:var(--hero);color:#fff;padding:56px 24px 48px}
+.hero h1,h2{font-family:"Source Serif 4",Georgia,serif;margin:0}
+.hero h1{font-size:clamp(30px,6vw,50px);line-height:1.15;max-width:700px}
+.flag{height:6px;background:linear-gradient(90deg,#d3162b 33.3%,#f5c518 33.3% 66.6%,#fff 66.6%)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.bar{display:flex;gap:16px;align-items:center;margin:20px 0}
+input{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;color:var(--text);font:inherit}
+.count{color:var(--mute);white-space:nowrap}
+h2{font-size:26px;margin:28px 0 14px}h2 small{font:400 15px "Public Sans",sans-serif;color:var(--mute);margin-left:10px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th{color:var(--accent);text-align:left;font-size:14px;padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(122,162,255,.08)}
+td{padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top;word-break:break-word}
+tr:last-child td{border:0}td:first-child{color:var(--mute);width:56px}td.n{font-weight:600}
+a{color:var(--accent)}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--mute)}
+footer{color:var(--mute);font-size:13px;padding:30px 0 40px}
+</style></head><body>
+
+<nav class="topnav" aria-label="Directory navigation">
+  <div class="wrap">
+    <a href="index.html">
+      National Government Agencies
+    </a>
+
+    <a href="WaterDistrict.html">
+      Water Districts Directory
+    </a>
+
+    <a href="ElectricCompany.html" aria-current="page">
+      Electric Cooperatives &amp; Utilities Directory
+    </a>
+  </div>
+</nav>
+<div class="hero"><div class="wrap" style="padding:0"><h1>Philippine Electric Cooperatives &amp; Utilities</h1></div></div>
+<div class="flag"></div>
+<div class="wrap">
+<div class="bar"><input id="q" type="search" placeholder="Search by name or website"><span class="count" id="c"></span></div>
+<h2>Electric Companies <small id="s"></small></h2>
+<div class="tbl"><table><thead><tr><th>No.</th><th>Name</th><th>Website</th><th>Type</th></tr></thead><tbody id="b"></tbody></table></div>
+<footer>Names are auto-generated from each link (mostly acronyms). Entries with no link are shown as given. Tracking codes (fbclid) were removed from links.</footer>
+</div>
+<script>
+// "f:" = facebook.com/, "h:" = http://, "n:" = name only, otherwise https://
+const D=`f:AbraElectricCoop
+aneco.ph/
+aselco.ph/
+www.akelco.com.ph/
+web.alecoinc.com.ph/
+angeleselectric.com.ph/
+web.anteco.com.ph/
+www.aurelcomain.com/
+f:balambanenerzone/
+f:balambanenerzone/
+romelcoinc.com/
+f:baselco.basilan.3720/
+f:BatanesBatanelco/
+batelec1.com.ph/
+batelec2.ph/
+www.beneco.com.ph/
+www.bileco.net/home/
+boheco1.com/articles/
+www.boheco2.com.ph/about
+boholpower.ph/
+boholpower.ph/
+buseco.coop/
+n:Bumbaran Electric Cooperative
+f:biselco.coronpalawan/
+celcor.com.ph/
+www.cepalco.com.ph/
+www.cagelco1.org.ph/
+f:CAGELCO2.INC/
+f:p/Cagayan-de-Sulu-Electric-Cooperative-Inc-61559064814810/
+canoreco.com.ph/category/invitation-to-bid/
+www.casureco1.com/category/itb/
+f:CASURECOII/
+casureco3.com/
+casureco4.com/inbid
+f:camelco1977/
+f:p/CELCO-Official-100070228032299/
+capelco.com/official/
+www.cebeco-1.com/
+www.cebeco2.com.ph/
+www.cebeco3.com.ph/category/invitation-to-bid/
+www.cenpelco.com/
+www.clarkelectric.ph/
+n:Concepcion Electric System
+n:Corcuera Electric System
+cotelco.com.ph/
+www.ppalmacotelco.com/
+www.cotabatolight.com/
+www.dagupanelectric.com/
+f:DavaoLightOfficial/
+www.doreco.net/
+www.dasureco.com/
+dielcoinc.com/
+dorelco.com.ph/
+www.esamelco.com/
+firstbaypower.com/
+fibeco.ph/
+ficelco.com/
+fleco.com.ph/
+www.guimelco.com/invitation-to-bid/
+n:Hilabaan Fishermen's Multi-Purpose Cooperative
+ibaanelectric.com/
+n:Ifugao Electric Cooperative
+www.iliganlight.com/
+inec-ec.com/
+www.iseco.org/
+ileco1.com/
+ileco2.ph/
+ileco3.com/
+www.iselcouno.com/
+iselco2.com.ph/invitation-to-bid/
+www.kaelco.com.ph/invitation-to-bid/
+www.luecoinc.com/
+luelco.com.ph/
+laneco.co/
+n:Lanao del Sur Electric Cooperative
+www.leyeco-2.com/
+www.leyeco3.com/
+www.leyecoiv.com/category/leyeco-iv-bids-and-awards/
+www.leyeco-v.com.ph/
+f:limaenerzone/
+n:Lubang Electric Cooperative
+mecomactan.com/
+f:mactanenerzone
+www.magelco.com.ph/
+f:malvarenerzone/
+company.meralco.com.ph/
+company.meralco.com.ph/
+f:mmpc.maripipi/
+f:OfficialMASELCO/
+moelci-1.com/
+f:p/Moelci-II-100070270028498/
+moresco1.com/what-is-moresco-1/
+moresco2.ph/bidding
+morepower.com.ph/
+mopreco.com.ph/
+negrospower.ph/
+h:www.noceco.ph/
+noreco1.com/
+www.noreco2.com.ph/bidding-invitations
+nordeco.ph/invitation-to-bid/
+www.nonecoelectric.com/bids
+norsamelco.com/news
+neeco1.org/
+www.neeco2area1.com/
+neeco2area2.com/bid/invitation.html
+www.nuvelco.com/news/invitation-to-bid
+www.omeco.com.ph/publications/bids-and-awards
+www.oedc.com.ph/
+ormeco-inc.com/
+paleco.net/paleco/
+www.pelco1.org.ph/
+pelco2.com/
+www.pelco3.org/
+f:PRESCOPhil/
+www.panelco3.com.ph/
+www.panelco3.com.ph/
+f:p/PAMES-and-PMWS-100063998826979/
+www.penelco.com/
+prosielco.com/
+quezelco1.org/
+quezelco2.com.ph/
+quirelco.com/
+romelcoinc.com/
+samelco1.com/
+samelcodos.com/
+sfelapco.com/
+sajelco.net/
+siarelco.com/
+n:Siasi Electric Cooperative
+www.soreco1.org/
+sorecodos.com/
+socoteco-1.com/
+www.socoteco2.com/
+www.soleco.com.ph/
+n:Subic Enerzone Corporation
+www.sukelco.com.ph/index.php/invitation-to-bid/
+f:suluelectric/
+www.surneco.com.ph/
+surseco1.ph/
+www.surseco2.com.ph/PublicBidding
+tielcoelecdu.com/invitation-to-bid/
+tarlacelectric.com/
+tarelco1ph.com/
+www.tarelco2.com/
+f:tawelcoinc/
+f:p/TICAO-Island-Electric-Cooperative-Inc-61557599057473/
+www.visayanelectric.com/
+zameco1.com/wp/
+zameco2.com/
+www.zamcelco.com.ph/
+zaneco.ph/
+www.zamsureco1.com/
+zamsureco2.ph/website/index.php`.split("\n").filter(Boolean);
+const O={meralco:"Meralco",visayanelectric:"Visayan Electric",dagupanelectric:"Dagupan Electric Corporation",iliganlight:"Iligan Light & Power",cepalco:"CEPALCO",clarkelectric:"Clark Electric Distribution",angeleselectric:"Angeles Electric Corporation",tarlacelectric:"Tarlac Electric Inc.",cotabatolight:"Cotabato Light & Power",firstbaypower:"First Bay Power Corporation"};
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+function info(e){
+ if(e.startsWith("n:"))return{name:e.slice(2),url:"",type:"No link"};
+ let url,type,name;
+ if(e.startsWith("f:")){url="https://www.facebook.com/"+e.slice(2);type="Facebook";
+  let s=e.slice(2).replace(/\/$/,"");
+  s=s.replace(/^p\//,"").replace(/[-.]?\d{4,}$/,"").replace(/-/g," ").replace(/\./g," ").replace(/([a-z])([A-Z])/g,"$1 $2").replace(/enerzone$/i," Enerzone").trim();
+  name=/^[a-z]/.test(s)&&!s.includes(" ")?cap(s):s;
+  if(/^[a-z]+ [a-z]+$/.test(s))name=s.split(" ").map(cap).join(" ");
+ }else{url=(e.startsWith("h:")?"http://":"https://")+e.replace(/^h:/,"");type="Website";
+  const l=e.replace(/^h:/,"").replace(/^(www\.|web\.|company\.)/,"").split(/[./]/)[0];
+  name=O[l]||l.replace(/-/g,"").toUpperCase();
+ }
+ return{name,url,type,disp:url.replace(/^https?:\/\/(www\.)?/,"").replace(/\/$/,"")};
+}
+const R=D.map(info);
+const b=document.getElementById("b"),q=document.getElementById("q");
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function render(){
+ const t=q.value.trim().toLowerCase();let n=0,h="";
+ R.forEach(r=>{if(t&&!(r.name+" "+r.url).toLowerCase().includes(t))return;n++;
+  h+=`<tr><td>${n}</td><td class="n">${esc(r.name)}</td><td>${r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.disp)}</a>`:"—"}</td><td><span class="tag">${r.type}</span></td></tr>`});
+ b.innerHTML=h||'<tr><td colspan="4">No matches.</td></tr>';
+ document.getElementById("c").textContent=n+" entries";
+ document.getElementById("s").textContent=n+" companies";
+}
+q.addEventListener("input",render);render();
+</script></body></html>
