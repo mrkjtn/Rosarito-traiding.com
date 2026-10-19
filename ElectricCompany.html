@@ -1,291 +1,229 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Philippine Electric Cooperatives & Utilities</title>
+<title>Philippine Electric Cooperatives &amp; Utilities</title>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
 <style>
-    .topnav {
-  width: 100%;
-  background-color: #151f30;
-  border-bottom: 1px solid #26364b;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav .wrap {
-  max-width: 1180px;
-  min-height: 50px;
-  margin: 0 auto;
-  padding: 6px 16px;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1.35fr 0.4fr 0.85fr;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-  column-gap: 22px;
-  box-sizing: border-box;
-}
-
-.topnav a {
-  color: #f5f7fb;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.4;
-  display: block;
-  text-align: center;
-  transition: color 0.2s ease;
-}
-
-.topnav a:hover {
-  color: #8ecbff;
-}
-
-@media (max-width: 900px) {
-  .topnav .wrap {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 18px;
-    padding: 12px 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .topnav .wrap {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .topnav a {
-    font-size: 12px;
-  }
-}
+.topnav{width:100%;background-color:#151f30;border-bottom:1px solid #26364b;font-family:Arial,Helvetica,sans-serif}
+.topnav .wrap{max-width:1180px;min-height:50px;margin:0 auto;padding:6px 16px;display:grid;grid-template-columns:1.5fr 1fr 1.35fr 0.4fr 0.85fr;align-items:center;justify-items:center;text-align:center;column-gap:22px;box-sizing:border-box}
+.topnav a{color:#f5f7fb;text-decoration:none;font-size:13px;font-weight:600;line-height:1.4;display:block;text-align:center;transition:color .2s ease}
+.topnav a:hover{color:#8ecbff}
+@media (max-width:900px){.topnav .wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px;padding:12px 16px}}
+@media (max-width:480px){.topnav .wrap{grid-template-columns:1fr;gap:10px}.topnav a{font-size:12px}}
 :root{--bg:#0a0f1e;--hero:#12254f;--panel:#16213b;--line:#26324f;--text:#e8ecf5;--mute:#9aa6c1;--accent:#7aa2ff;--bar:#0e1730;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f5f7fb;--panel:#fff;--line:#d9e0ee;--text:#14203a;--mute:#5a6785;--accent:#1d4ed8;--bar:#fff}}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f5f7fb;--hero:#12254f;--panel:#fff;--line:#d9e0ee;--text:#14203a;--mute:#5a6785;--accent:#1d4ed8;--bar:#fff}}
+:root[data-theme="dark"]{--bg:#0a0f1e}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 "Public Sans",system-ui,sans-serif}
-nav{background:var(--bar);border-bottom:1px solid var(--line);padding:14px 24px;font-weight:600;font-size:15px}
 .hero{background:var(--hero);color:#fff;padding:56px 24px 48px}
 .hero h1,h2{font-family:"Source Serif 4",Georgia,serif;margin:0}
-.hero h1{font-size:clamp(30px,6vw,50px);line-height:1.15;max-width:700px}
+.hero h1{font-size:clamp(32px,6vw,52px);line-height:1.15;max-width:700px}
 .flag{height:6px;background:linear-gradient(90deg,#d3162b 33.3%,#f5c518 33.3% 66.6%,#fff 66.6%)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.bar{display:flex;gap:16px;align-items:center;margin:20px 0}
-input{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;color:var(--text);font:inherit}
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0}
+input,select{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;color:var(--text);font:inherit}
+input{flex:1;min-width:200px}
 .count{color:var(--mute);white-space:nowrap}
 h2{font-size:26px;margin:28px 0 14px}h2 small{font:400 15px "Public Sans",sans-serif;color:var(--mute);margin-left:10px}
 .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-table{width:100%;border-collapse:collapse;min-width:520px}
+table{width:100%;border-collapse:collapse;min-width:620px}
 th{color:var(--accent);text-align:left;font-size:14px;padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(122,162,255,.08)}
 td{padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top;word-break:break-word}
 tr:last-child td{border:0}td:first-child{color:var(--mute);width:56px}td.n{font-weight:600}
 a{color:var(--accent)}
-.tag{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--mute)}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--mute);white-space:nowrap}
+.tbc{color:var(--mute);font-style:italic}
 footer{color:var(--mute);font-size:13px;padding:30px 0 40px}
 </style></head><body>
 
 <nav class="topnav" aria-label="Directory navigation">
   <div class="wrap">
-    <a href="index.html">
-      National Government Agencies
-    </a>
-
-    <a href="WaterDistrict.html">
-      Water Districts Directory
-    </a>
-
-    <a href="ElectricCompany.html" aria-current="page">
-      Electric Cooperatives &amp; Utilities Directory
-    </a>
+    <a href="index.html">National Government Agencies</a>
+    <a href="WaterDistrict.html">Water Districts Directory</a>
+    <a href="ElectricCompany.html" aria-current="page">Electric Cooperatives &amp; Utilities Directory</a>
   </div>
 </nav>
+
 <div class="hero"><div class="wrap" style="padding:0"><h1>Philippine Electric Cooperatives &amp; Utilities</h1></div></div>
 <div class="flag"></div>
 <div class="wrap">
-<div class="bar"><input id="q" type="search" placeholder="Search by name or website"><span class="count" id="c"></span></div>
-<h2>Electric Companies <small id="s"></small></h2>
-<div class="tbl"><table><thead><tr><th>No.</th><th>Name</th><th>Website</th><th>Type</th></tr></thead><tbody id="b"></tbody></table></div>
-<footer>Names are auto-generated from each link (mostly acronyms). Entries with no link are shown as given. Tracking codes (fbclid) were removed from links.</footer>
+<div class="bar">
+  <input id="q" type="search" placeholder="Search by name or acronym">
+  <select id="r"><option value="">All regions</option><option>Luzon</option><option>Visayas</option><option>Mindanao</option></select>
+  <span class="count" id="c"></span>
+</div>
+<h2>Electric Cooperatives and Utilities <small id="s"></small></h2>
+<div class="tbl"><table><thead><tr><th>No.</th><th>Name</th><th>Acronym</th><th>Website</th><th>Type</th><th>Region</th></tr></thead><tbody id="b"></tbody></table></div>
+<footer>Types: NEA-EC = NEA-supervised cooperative; EC-CDA = CDA-registered cooperative; SPUG-EC = cooperative serving missionary areas; PIOU = private investor-owned utility; LGUOU = LGU-owned utility; MPC = multi-purpose cooperative. Entries with no website show "Link to be added". Tracking codes (fbclid) were removed from links.</footer>
 </div>
 <script>
-// "f:" = facebook.com/, "h:" = http://, "n:" = name only, otherwise https://
-const D=`f:AbraElectricCoop
-aneco.ph/
-aselco.ph/
-www.akelco.com.ph/
-web.alecoinc.com.ph/
-angeleselectric.com.ph/
-web.anteco.com.ph/
-www.aurelcomain.com/
-f:balambanenerzone/
-f:balambanenerzone/
-romelcoinc.com/
-f:baselco.basilan.3720/
-f:BatanesBatanelco/
-batelec1.com.ph/
-batelec2.ph/
-www.beneco.com.ph/
-www.bileco.net/home/
-boheco1.com/articles/
-www.boheco2.com.ph/about
-boholpower.ph/
-boholpower.ph/
-buseco.coop/
-n:Bumbaran Electric Cooperative
-f:biselco.coronpalawan/
-celcor.com.ph/
-www.cepalco.com.ph/
-www.cagelco1.org.ph/
-f:CAGELCO2.INC/
-f:p/Cagayan-de-Sulu-Electric-Cooperative-Inc-61559064814810/
-canoreco.com.ph/category/invitation-to-bid/
-www.casureco1.com/category/itb/
-f:CASURECOII/
-casureco3.com/
-casureco4.com/inbid
-f:camelco1977/
-f:p/CELCO-Official-100070228032299/
-capelco.com/official/
-www.cebeco-1.com/
-www.cebeco2.com.ph/
-www.cebeco3.com.ph/category/invitation-to-bid/
-www.cenpelco.com/
-www.clarkelectric.ph/
-n:Concepcion Electric System
-n:Corcuera Electric System
-cotelco.com.ph/
-www.ppalmacotelco.com/
-www.cotabatolight.com/
-www.dagupanelectric.com/
-f:DavaoLightOfficial/
-www.doreco.net/
-www.dasureco.com/
-dielcoinc.com/
-dorelco.com.ph/
-www.esamelco.com/
-firstbaypower.com/
-fibeco.ph/
-ficelco.com/
-fleco.com.ph/
-www.guimelco.com/invitation-to-bid/
-n:Hilabaan Fishermen's Multi-Purpose Cooperative
-ibaanelectric.com/
-n:Ifugao Electric Cooperative
-www.iliganlight.com/
-inec-ec.com/
-www.iseco.org/
-ileco1.com/
-ileco2.ph/
-ileco3.com/
-www.iselcouno.com/
-iselco2.com.ph/invitation-to-bid/
-www.kaelco.com.ph/invitation-to-bid/
-www.luecoinc.com/
-luelco.com.ph/
-laneco.co/
-n:Lanao del Sur Electric Cooperative
-www.leyeco-2.com/
-www.leyeco3.com/
-www.leyecoiv.com/category/leyeco-iv-bids-and-awards/
-www.leyeco-v.com.ph/
-f:limaenerzone/
-n:Lubang Electric Cooperative
-mecomactan.com/
-f:mactanenerzone
-www.magelco.com.ph/
-f:malvarenerzone/
-company.meralco.com.ph/
-company.meralco.com.ph/
-f:mmpc.maripipi/
-f:OfficialMASELCO/
-moelci-1.com/
-f:p/Moelci-II-100070270028498/
-moresco1.com/what-is-moresco-1/
-moresco2.ph/bidding
-morepower.com.ph/
-mopreco.com.ph/
-negrospower.ph/
-h:www.noceco.ph/
-noreco1.com/
-www.noreco2.com.ph/bidding-invitations
-nordeco.ph/invitation-to-bid/
-www.nonecoelectric.com/bids
-norsamelco.com/news
-neeco1.org/
-www.neeco2area1.com/
-neeco2area2.com/bid/invitation.html
-www.nuvelco.com/news/invitation-to-bid
-www.omeco.com.ph/publications/bids-and-awards
-www.oedc.com.ph/
-ormeco-inc.com/
-paleco.net/paleco/
-www.pelco1.org.ph/
-pelco2.com/
-www.pelco3.org/
-f:PRESCOPhil/
-www.panelco3.com.ph/
-www.panelco3.com.ph/
-f:p/PAMES-and-PMWS-100063998826979/
-www.penelco.com/
-prosielco.com/
-quezelco1.org/
-quezelco2.com.ph/
-quirelco.com/
-romelcoinc.com/
-samelco1.com/
-samelcodos.com/
-sfelapco.com/
-sajelco.net/
-siarelco.com/
-n:Siasi Electric Cooperative
-www.soreco1.org/
-sorecodos.com/
-socoteco-1.com/
-www.socoteco2.com/
-www.soleco.com.ph/
-n:Subic Enerzone Corporation
-www.sukelco.com.ph/index.php/invitation-to-bid/
-f:suluelectric/
-www.surneco.com.ph/
-surseco1.ph/
-www.surseco2.com.ph/PublicBidding
-tielcoelecdu.com/invitation-to-bid/
-tarlacelectric.com/
-tarelco1ph.com/
-www.tarelco2.com/
-f:tawelcoinc/
-f:p/TICAO-Island-Electric-Cooperative-Inc-61557599057473/
-www.visayanelectric.com/
-zameco1.com/wp/
-zameco2.com/
-www.zamcelco.com.ph/
-zaneco.ph/
-www.zamsureco1.com/
-zamsureco2.ph/website/index.php`.split("\n").filter(Boolean);
-const O={meralco:"Meralco",visayanelectric:"Visayan Electric",dagupanelectric:"Dagupan Electric Corporation",iliganlight:"Iligan Light & Power",cepalco:"CEPALCO",clarkelectric:"Clark Electric Distribution",angeleselectric:"Angeles Electric Corporation",tarlacelectric:"Tarlac Electric Inc.",cotabatolight:"Cotabato Light & Power",firstbaypower:"First Bay Power Corporation"};
-const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
-function info(e){
- if(e.startsWith("n:"))return{name:e.slice(2),url:"",type:"No link"};
- let url,type,name;
- if(e.startsWith("f:")){url="https://www.facebook.com/"+e.slice(2);type="Facebook";
-  let s=e.slice(2).replace(/\/$/,"");
-  s=s.replace(/^p\//,"").replace(/[-.]?\d{4,}$/,"").replace(/-/g," ").replace(/\./g," ").replace(/([a-z])([A-Z])/g,"$1 $2").replace(/enerzone$/i," Enerzone").trim();
-  name=/^[a-z]/.test(s)&&!s.includes(" ")?cap(s):s;
-  if(/^[a-z]+ [a-z]+$/.test(s))name=s.split(" ").map(cap).join(" ");
- }else{url=(e.startsWith("h:")?"http://":"https://")+e.replace(/^h:/,"");type="Website";
-  const l=e.replace(/^h:/,"").replace(/^(www\.|web\.|company\.)/,"").split(/[./]/)[0];
-  name=O[l]||l.replace(/-/g,"").toUpperCase();
- }
- return{name,url,type,disp:url.replace(/^https?:\/\/(www\.)?/,"").replace(/\/$/,"")};
-}
-const R=D.map(info);
-const b=document.getElementById("b"),q=document.getElementById("q");
-const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+// Format: Name|Acronym|Type|Region|Full website URL (optional)
+const D=`Abra Electric Cooperative|ABRECO|EC-CDA|Luzon|https://www.facebook.com/AbraElectricCoop
+Agusan del Norte Electric Cooperative|ANECO|NEA-EC|Mindanao|https://aneco.ph/
+Agusan del Sur Electric Cooperative|ASELCO|NEA-EC|Mindanao|https://aselco.ph/
+Aklan Electric Cooperative|AKELCO|NEA-EC|Visayas|https://www.akelco.com.ph/
+Albay Electric Cooperative|ALECO/APEC|NEA-EC|Luzon|https://web.alecoinc.com.ph/
+Angeles Electric Corporation|AEC|PIOU|Luzon|https://angeleselectric.com.ph/
+Antique Electric Cooperative|ANTECO|NEA-EC|Visayas|https://web.anteco.com.ph/
+Aurora Electric Cooperative|AURELCO|NEA-EC|Luzon|https://www.aurelcomain.com/
+Balamban Enerzone Corporation|BEZ|PIOU|Visayas|https://www.facebook.com/balambanenerzone/
+Bantayan Electric Cooperative|BANELCO|SPUG-EC|Visayas|https://banelcobantayan.com/
+Banton Electric System|Banton|LGUOU|Luzon|https://romelcoinc.com/
+Basilan Electric Cooperative|BASELCO|SPUG-EC|Mindanao|https://www.facebook.com/baselco.basilan.3720/
+Batanes Electric Cooperative|BATANELCO|SPUG-EC|Luzon|https://www.facebook.com/BatanesBatanelco/
+Batangas I Electric Cooperative|BATELEC I|NEA-EC|Luzon|https://batelec1.com.ph/
+Batangas II Electric Cooperative|BATELEC II|NEA-EC|Luzon|https://batelec2.ph/
+Benguet Electric Cooperative|BENECO|NEA-EC|Luzon|https://www.beneco.com.ph/
+Biliran Electric Cooperative|BILECO|NEA-EC|Visayas|https://www.bileco.net/home/
+Bohol I Electric Cooperative|BOHECO I|NEA-EC|Visayas|https://boheco1.com/articles/
+Bohol II Electric Cooperative|BOHECO II|NEA-EC|Visayas|https://www.boheco2.com.ph/about
+Bohol Light Company|BLCI|PIOU|Visayas|https://boholpower.ph/
+Bukidnon II Electric Cooperative|BUSECO|NEA-EC|Mindanao|https://buseco.coop/
+Bumbaran Electric Cooperative|Bumbaran|LGUOU|Mindanao|
+Busuanga Island Electric Cooperative|BISELCO|SPUG-EC|Luzon|https://www.facebook.com/biselco.coronpalawan/
+Cabanatuan Electric Corporation|CELCOR|PIOU|Luzon|https://celcor.com.ph/
+Cagayan Electric Power and Light Company|CEPALCO|PIOU|Mindanao|https://www.cepalco.com.ph/
+Cagayan I Electric Cooperative|CAGELCO I|NEA-EC|Luzon|https://www.cagelco1.org.ph/
+Cagayan II Electric Cooperative|CAGELCO II|NEA-EC|Luzon|https://www.facebook.com/CAGELCO2.INC/
+Cagayan de Sulu Electric Cooperative|CASELCO|NEA-EC|Mindanao|https://www.facebook.com/p/Cagayan-de-Sulu-Electric-Cooperative-Inc-61559064814810/
+Camarines Norte Electric Cooperative|CANORECO|NEA-EC|Luzon|https://canoreco.com.ph/category/invitation-to-bid/
+Camarines Sur I Electric Cooperative|CASURECO I|NEA-EC|Luzon|https://www.casureco1.com/category/itb/
+Camarines Sur II Electric Cooperative|CASURECO II|NEA-EC|Luzon|https://www.facebook.com/CASURECOII/
+Camarines Sur III Electric Cooperative|CASURECO III|NEA-EC|Luzon|https://casureco3.com/
+Camarines Sur IV Electric Cooperative|CASURECO IV|NEA-EC|Luzon|https://casureco4.com/inbid
+Camiguin Electric Cooperative|CAMELCO|NEA-EC|Mindanao|https://www.facebook.com/camelco1977/
+Camotes Electric Cooperative|CELCO|SPUG-EC|Visayas|https://www.facebook.com/p/CELCO-Official-100070228032299/
+Capiz Electric Cooperative|CAPELCO|NEA-EC|Visayas|https://capelco.com/official/
+Cebu I Electric Cooperative|CEBECO I|NEA-EC|Visayas|https://www.cebeco-1.com/
+Cebu II Electric Cooperative|CEBECO II|NEA-EC|Visayas|https://www.cebeco2.com.ph/
+Cebu III Electric Cooperative|CEBECO III|NEA-EC|Visayas|https://www.cebeco3.com.ph/category/invitation-to-bid/
+Central Pangasinan Electric Cooperative|CENPELCO|NEA-EC|Luzon|https://www.cenpelco.com/
+Clark Electric Distribution Corporation|CEDC|PIOU|Luzon|https://www.clarkelectric.ph/
+Concepcion Electric System|Concepcion|LGUOU|Luzon|
+Corcuera Electric System|Corcuera|LGUOU|Luzon|
+Cotabato Electric Cooperative|COTELCO|NEA-EC|Mindanao|https://cotelco.com.ph/
+Cotabato Electric Cooperative – PPALMA|COTELCO – PPALMA|NEA-EC|Mindanao|https://www.ppalmacotelco.com/
+Cotabato Light and Power Company|CLPC|PIOU|Mindanao|https://www.cotabatolight.com/
+Dagupan Electric Corporation|DECORP|PIOU|Luzon|https://www.dagupanelectric.com/
+Davao Light and Power Company|DLPC|PIOU|Mindanao|https://www.facebook.com/DavaoLightOfficial/
+Davao Oriental Electric Cooperative|DORECO|NEA-EC|Mindanao|https://www.doreco.net/
+Davao del Sur Electric Cooperative|DASURECO|NEA-EC|Mindanao|https://www.dasureco.com/
+Dinagat Island Electric Cooperative|DIELCO|SPUG-EC|Mindanao|https://dielcoinc.com/
+Don Orestes Romualdez Electric Cooperative|DORELCO|NEA-EC|Visayas|https://dorelco.com.ph/
+Eastern Samar Electric Cooperative|ESAMELCO|NEA-EC|Visayas|https://www.esamelco.com/
+First Bay Power Corporation|FBPC|LGUOU|Luzon|https://firstbaypower.com/
+First Bukidnon Electric Cooperative|FIBECO|NEA-EC|Mindanao|https://fibeco.ph/
+First Catanduanes Electric Cooperative|FICELCO|SPUG-EC|Luzon|https://ficelco.com/
+First Laguna Electric Cooperative|FLECO|NEA-EC|Luzon|https://fleco.com.ph/
+Guimaras Electric Cooperative|GUIMELCO|NEA-EC|Visayas|https://www.guimelco.com/invitation-to-bid/
+Hilabaan Fishermen's Multi-Purpose Cooperative|HFMPC|MPC|Visayas|
+Ibaan Electric Corporation|IEC|PIOU|Luzon|https://ibaanelectric.com/
+Ifugao Electric Cooperative|IFELCO|NEA-EC|Luzon|https://www.facebook.com/p/Ifugao-Electric-Cooperative-Inc-Tinoc-Sub-Office-100064113788299/
+Iligan Light and Power|ILPI|PIOU|Mindanao|https://www.iliganlight.com/
+Ilocos Norte Electric Cooperative|INEC|NEA-EC|Luzon|https://inec-ec.com/
+Ilocos Sur Electric Cooperative|ISECO|NEA-EC|Luzon|https://www.iseco.org/
+Iloilo I Electric Cooperative|ILECO I|NEA-EC|Visayas|https://ileco1.com/
+Iloilo II Electric Cooperative|ILECO II|NEA-EC|Visayas|https://ileco2.ph/
+Iloilo III Electric Cooperative|ILECO III|NEA-EC|Visayas|https://ileco3.com/
+Isabela I Electric Cooperative|ISELCO I|NEA-EC|Luzon|https://www.iselcouno.com/
+Isabela II Electric Cooperative|ISELCO II|EC-CDA|Luzon|https://iselco2.com.ph/invitation-to-bid/
+Kalinga-Apayao Electric Cooperative|KAELCO|NEA-EC|Luzon|https://www.kaelco.com.ph/invitation-to-bid/
+La Union Electric Company|LUECO|PIOU|Luzon|https://www.luecoinc.com/
+La Union Electric Cooperative|LUELCO|NEA-EC|Luzon|https://luelco.com.ph/
+Lanao del Norte Electric Cooperative|LANECO|NEA-EC|Mindanao|https://laneco.co/
+Lanao del Sur Electric Cooperative|LASURECO|NEA-EC|Mindanao|
+Leyte II Electric Cooperative|LEYECO II|NEA-EC|Visayas|https://www.leyeco-2.com/
+Leyte III Electric Cooperative|LEYECO III|NEA-EC|Visayas|https://www.leyeco3.com/
+Leyte IV Electric Cooperative|LEYECO IV|NEA-EC|Visayas|https://www.leyecoiv.com/category/leyeco-iv-bids-and-awards/
+Leyte V Electric Cooperative|LEYECO V|NEA-EC|Visayas|https://www.leyeco-v.com.ph/
+Lima Enerzone Corporation|LEZ|—|—|https://www.facebook.com/limaenerzone/
+Lubang Electric Cooperative|LUBELCO|SPUG-EC|Luzon|https://www.facebook.com/OfficialLUBELCO/
+Mactan Electric Company|MECO|PIOU|Visayas|https://mecomactan.com/
+Mactan Enerzone Corporation|MEZ|PIOU|Visayas|https://www.facebook.com/mactanenerzone
+Maguindanao Electric Cooperative|MAGELCO|NEA-EC|Mindanao|https://www.magelco.com.ph/
+Malvar Enerzone Corporation|MALVEZ|—|—|https://www.facebook.com/malvarenerzone/
+Manila Electric Company|MERALCO|PIOU|Luzon|https://company.meralco.com.ph/
+Marinduque Electric Cooperative|MARELCO|SPUG-EC|Luzon|https://marelco.org.ph/
+Maripipi Multi-Purpose Electric Cooperative|MMPC|MPC|Visayas|https://www.facebook.com/mmpc.maripipi/
+Masbate Electric Cooperative|MASELCO|SPUG-EC|Luzon|https://www.facebook.com/OfficialMASELCO/
+Misamis Occidental I Electric Cooperative|MOELCI I|NEA-EC|Mindanao|https://moelci-1.com/
+Misamis Occidental II Electric Cooperative|MOELCI II|NEA-EC|Mindanao|https://www.facebook.com/p/Moelci-II-100070270028498/
+Misamis Oriental I Rural Electric Cooperative|MORESCO I|NEA-EC|Mindanao|https://moresco1.com/what-is-moresco-1/
+Misamis Oriental II Electric Cooperative|MORESCO II|NEA-EC|Mindanao|https://moresco2.ph/bidding
+MORE Electric and Power Corporation|MEPC|PIOU|Visayas|https://morepower.com.ph/
+Mountain Province Electric Cooperative|MOPRECO|NEA-EC|Luzon|https://mopreco.com.ph/
+Negros Electric and Power Corporation|NEPC|TBA|Visayas|https://negrospower.ph/
+Negros Occidental Electric Cooperative|NOCECO|EC-CDA|Visayas|http://www.noceco.ph/
+Negros Oriental I Electric Cooperative|NORECO I|NEA-EC|Visayas|https://noreco1.com/
+Negros Oriental II Electric Cooperative|NORECO II|EC-CDA|Visayas|https://www.noreco2.com.ph/bidding-invitations
+Northern Davao Electric Cooperative|NORDECO|NEA-EC|Mindanao|https://nordeco.ph/invitation-to-bid/
+Northern Negros Electric Cooperative|NONECO|NEA-EC|Visayas|https://www.nonecoelectric.com/bids
+Northern Samar Electric Cooperative|NORSAMELCO|NEA-EC|Visayas|https://norsamelco.com/news
+Nueva Ecija I Electric Cooperative|NEECO I|NEA-EC|Luzon|https://neeco1.org/
+Nueva Ecija II Electric Cooperative (Area 1)|NEECO II – Area 1|NEA-EC|Luzon|https://www.neeco2area1.com/
+Nueva Ecija II Electric Cooperative (Area 2)|NEECO II – Area 2|NEA-EC|Luzon|https://neeco2area2.com/bid/invitation.html
+Nueva Vizcaya Electric Cooperative|NUVELCO|EC-CDA|Luzon|https://www.nuvelco.com/news/invitation-to-bid
+Occidental Mindoro Electric Cooperative|OMECO|SPUG-EC|Luzon|https://www.omeco.com.ph/publications/bids-and-awards
+Olongapo Electricity Distribution Company|OEDC|PIOU|Luzon|https://www.oedc.com.ph/
+Oriental Mindoro Electric Cooperative|ORMECO|SPUG-EC|Luzon|https://ormeco-inc.com/
+Palawan Electric Cooperative|PALECO|SPUG-EC CDA|Luzon|https://paleco.net/paleco/
+Pampanga I Electric Cooperative|PELCO I|NEA-EC|Luzon|https://www.pelco1.org.ph/
+Pampanga II Electric Cooperative|PELCO II|NEA-EC|Luzon|https://pelco2.com/
+Pampanga III Electric Cooperative|PELCO III|NEA-EC|Luzon|https://www.pelco3.org/
+Pampanga Rural Electric Service Cooperative|PRESCO|NEA-EC|Luzon|https://www.facebook.com/PRESCOPhil/
+Pangasinan I Electric Cooperative|PANELCO I|EC-CDA|Luzon|https://panelcoi.com/
+Pangasinan III Electric Cooperative|PANELCO III|EC-CDA|Luzon|https://www.panelco3.com.ph/
+Pantabangan Municipal Electric System|PAMES|LGUOU|Luzon|https://www.facebook.com/p/PAMES-and-PMWS-100063998826979/
+Peninsula Electric Cooperative|PENELCO|NEA-EC|Luzon|https://www.penelco.com/
+Province of Siquijor Electric Cooperative|PROSIELCO|SPUG-EC|Visayas|https://prosielco.com/
+Quezon I Electric Cooperative|QUEZELCO I|NEA-EC|Luzon|https://quezelco1.org/
+Quezon II Electric Cooperative|QUEZELCO II|NEA-EC|Luzon|https://quezelco2.com.ph/
+Quirino Electric Cooperative|QUIRELCO|EC-CDA|Luzon|https://quirelco.com/
+Romblon Electric Cooperative|ROMELCO|SPUG-EC|Luzon|https://romelcoinc.com/
+Samar I Electric Cooperative|SAMELCO I|NEA-EC|Visayas|https://samelco1.com/
+Samar II Electric Cooperative|SAMELCO II|NEA-EC|Visayas|https://samelcodos.com/
+San Fernando Electric and Power Company|SFELAPCO|PIOU|Luzon|https://sfelapco.com/
+San Jose City Electric Cooperative|SAJELCO|NEA-EC|Luzon|https://sajelco.net/
+Siargao Electric Cooperative|SIARELCO|NEA-EC|Mindanao|https://siarelco.com/
+Siasi Electric Cooperative|SIASELCO|SPUG-EC|Mindanao|
+Sorsogon I Electric Cooperative|SORECO I|NEA-EC|Luzon|https://www.soreco1.org/
+Sorsogon II Electric Cooperative|SORECO II|EC-CDA|Luzon|https://sorecodos.com/
+South Cotabato I Electric Cooperative|SOCOTECO I|NEA-EC|Mindanao|https://socoteco-1.com/
+South Cotabato II Electric Cooperative|SOCOTECO II|NEA-EC|Mindanao|https://www.socoteco2.com/
+Southern Leyte Electric Cooperative|SOLECO|NEA-EC|Visayas|https://www.soleco.com.ph/
+Subic Enerzone Corporation|SEZ|PIOU|Luzon|https://www.facebook.com/subicenerzone/
+Sultan Kudarat Electric Cooperative|SUKELCO|NEA-EC|Mindanao|https://www.sukelco.com.ph/index.php/invitation-to-bid/
+Sulu Electric Cooperative|SULECO|SPUG-EC|Mindanao|https://www.facebook.com/suluelectric/
+Surigao del Norte Electric Cooperative|SURNECO|NEA-EC|Mindanao|https://www.surneco.com.ph/
+Surigao del Sur I Electric Cooperative|SURSECO I|NEA-EC|Mindanao|https://surseco1.ph/
+Surigao del Sur II Electric Cooperative|SURSECO II|NEA-EC|Mindanao|https://www.surseco2.com.ph/PublicBidding
+Tablas Island Electric Cooperative|TIELCO|SPUG-EC|Luzon|https://tielcoelecdu.com/invitation-to-bid/
+Tarlac Electric|TEI|PIOU|Luzon|https://tarlacelectric.com/
+Tarlac I Electric Cooperative|TARELCO I|NEA-EC|Luzon|https://tarelco1ph.com/
+Tarlac II Electric Cooperative|TARELCO II|NEA-EC|Luzon|https://www.tarelco2.com/
+Tawi-Tawi Electric Cooperative|TAWELCO|SPUG-EC|Mindanao|https://www.facebook.com/tawelcoinc/
+Ticao Island Electric Cooperative|TISELCO|SPUG-EC|Luzon|https://www.facebook.com/p/TICAO-Island-Electric-Cooperative-Inc-61557599057473/
+Visayan Electric Company|VECO|PIOU|Visayas|https://www.visayanelectric.com/
+Zambales I Electric Cooperative|ZAMECO I|NEA-EC|Luzon|https://zameco1.com/wp/
+Zambales II Electric Cooperative|ZAMECO II|NEA-EC|Luzon|https://zameco2.com/
+Zamboanga City Electric Cooperative|ZAMCELCO|NEA-EC|Mindanao|https://www.zamcelco.com.ph/
+Zamboanga del Norte Electric Cooperative|ZANECO|NEA-EC|Mindanao|https://zaneco.ph/
+Zamboanga del Sur I Electric Cooperative|ZAMSURECO I|NEA-EC|Mindanao|https://www.zamsureco1.com/
+Zamboanga del Sur II Electric Cooperative|ZAMSURECO II|NEA-EC|Mindanao|https://zamsureco2.ph/website/index.php`.split("\n").filter(Boolean);
+const R=D.map(l=>{const [name,acr,type,region,site]=l.split("|");return{name,acr,type,region,site:site||""}});
+const b=document.getElementById("b"),q=document.getElementById("q"),rs=document.getElementById("r");
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function render(){
- const t=q.value.trim().toLowerCase();let n=0,h="";
- R.forEach(r=>{if(t&&!(r.name+" "+r.url).toLowerCase().includes(t))return;n++;
-  h+=`<tr><td>${n}</td><td class="n">${esc(r.name)}</td><td>${r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.disp)}</a>`:"—"}</td><td><span class="tag">${r.type}</span></td></tr>`});
- b.innerHTML=h||'<tr><td colspan="4">No matches.</td></tr>';
+ const t=q.value.trim().toLowerCase(),g=rs.value;let n=0,h="";
+ R.forEach(r=>{
+  if(g&&r.region!==g)return;
+  if(t&&!(r.name+" "+r.acr).toLowerCase().includes(t))return;
+  n++;
+  const w=r.site?`<a href="${esc(r.site)}" target="_blank" rel="noopener">${esc(r.site.replace(/^https?:\/\/(www\.)?/,"").replace(/\/$/,""))}</a>`:'<span class="tbc">Link to be added</span>';
+  h+=`<tr><td>${n}</td><td class="n">${esc(r.name)}</td><td>${esc(r.acr)}</td><td>${w}</td><td><span class="tag">${esc(r.type)}</span></td><td>${esc(r.region)}</td></tr>`});
+ b.innerHTML=h||'<tr><td colspan="6">No matches.</td></tr>';
  document.getElementById("c").textContent=n+" entries";
- document.getElementById("s").textContent=n+" companies";
+ document.getElementById("s").textContent=n+" listed";
 }
-q.addEventListener("input",render);render();
+q.addEventListener("input",render);rs.addEventListener("change",render);render();
 </script></body></html>
