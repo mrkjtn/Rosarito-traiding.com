@@ -512,4 +512,11 @@ function render(){
  document.getElementById("s").textContent=n+" water districts";
 }
 q.addEventListener("input",render);render();
+  const nav = document.querySelector('.topnav');
+function fit() {
+  document.documentElement.style.paddingTop = nav.offsetHeight + 'px';
+}
+fit();
+addEventListener('resize', fit);
+addEventListener('load', fit);
 </script></body></html>
