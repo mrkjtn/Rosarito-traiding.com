@@ -5,7 +5,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
 <style>
   
-  .topnav .wrap {
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-top: calc(14px + env(safe-area-inset-top, 0px));
+}
+
+.topnav .wrap {
   max-width: 1000px;
   min-height: 50px;
   margin: 0 auto;
@@ -16,8 +25,6 @@
   flex-wrap: wrap;
   gap: 12px 20px;
   box-sizing: border-box;
- 
- 
 }
 
 .topnav a {
@@ -29,7 +36,11 @@
   line-height: 1.4;
   text-align: center;
 }
-:root{--bg:#0a0f1e;--hero:#12254f;--panel:#16213b;--line:#26324f;--text:#e8ecf5;--mute:#9aa6c1;--accent:#7aa2ff;--bar:#0e1730;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+.topnav a:hover {
+  color: #8ecbff;
+}
+  :root{--bg:#0a0f1e;--hero:#12254f;--panel:#16213b;--line:#26324f;--text:#e8ecf5;--mute:#9aa6c1;--accent:#7aa2ff;--bar:#0e1730;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f5f7fb;--hero:#12254f;--panel:#fff;--line:#d9e0ee;--text:#14203a;--mute:#5a6785;--accent:#1d4ed8;--bar:#fff}}
 :root[data-theme="dark"]{--bg:#0a0f1e}
 *{box-sizing:border-box}
